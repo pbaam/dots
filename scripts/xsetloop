@@ -3,7 +3,7 @@
 let loop=0
 while true; do
 	
-	xsetroot -name " $(date '+%b %d %a') | $(date '+%H:%M') "
+	xsetroot -name " $(setxkbmap -query | awk 'FNR == 3 {print $2}') | $(date '+%b %d %a') | $(date '+%H:%M') "
 	if [ $loop -eq 0 ]; 
 		then 
 			dwm >/dev/null 2>&1 &
