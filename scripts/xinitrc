@@ -3,9 +3,6 @@ xrandr --output Virtual-1 --mode 1366x768 &
 picom -f &
 
 nitrogen --restore &
-#pscircle
-#ps -e -c -o pid=,ppid=,pcpu=,rss=,comm= | pscircle --stdin=true --memlist-show=false --cpulist-show=false
-
 
 case "$1" in
 	xmonad)
@@ -33,29 +30,5 @@ case "$1" in
 		;;
 esac
 
-# exec sxhkd &
-# let loop=0
-# while true; do
-# 	
-# xsetroot -name " $(setxkbmap -query | awk 'FNR == 3 {print $2}') | $(date '+%b %d %a') | $(date '+%H:%M') "
-# 	if [ $loop -eq 0 ]; 
-# 		then 
-# 			dwm >/dev/null 2>&1 &
-# 		else
-# 			true
-# 	fi
-# 	let loop=1 &
-# 	sleep 1
-# 
-# done
-
-
 exec sxhkd &
 sh ~/bin/xsetloop
-
-#exec xmonad &
-# ~/.config/sxhkd/sxhkdrc
- 
-
-#startx
-
