@@ -1,6 +1,17 @@
 #!/bin/sh
 
+let loop=0
 while true; do
+	
 	xsetroot -name " $(date '+%b %d %a') | $(date '+%H:%M') "
+	if [ $loop -eq 0 ]; 
+		then 
+			dwm >/dev/null 2>&1 &
+		else
+			true
+	fi
+	let loop=1 &
 	sleep 1
+
 done
+
