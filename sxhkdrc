@@ -1,0 +1,18 @@
+mod4 + s
+	shot
+mod4 + shift + s
+	shot-fw
+mod4 + z
+	boomer
+alt + mod4 + e
+	setxkbmap -layout es
+alt + mod4 + i
+	setxkbmap -layout us
+ctrl + mod4 + d
+	dmenu
+# move windows with the mouse:
+#super + !button{1,3}
+#    {wmv, wrs} -a %i %i $(pfw)
+mod4 + shift + i
+	xcalib -invert -alter
+

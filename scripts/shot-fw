@@ -1,0 +1,3 @@
+#!/bin/sh
+xwd -id $(pfw) > /tmp/screenshot.xwd
+convert /tmp/screenshot.xwd /tmp/screenshot.png
