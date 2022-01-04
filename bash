@@ -10,3 +10,5 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
 fi
 
 eval "$(pandoc --bash-completion)"
+
+alias ll='ls -la'
