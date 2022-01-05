@@ -13,3 +13,5 @@ eval "$(pandoc --bash-completion)"
 
 alias ls='ls --color=auto'
 alias ll='ls -la'
+
+PS1="[ \[\e[31;1m\h\e[0m\] \[\e[36;3m\W\e[0m\] ] "
