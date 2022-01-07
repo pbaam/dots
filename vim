@@ -1,8 +1,8 @@
-map <Leader>a :w<CR>:!tmux send-keys -t .+1 "" C-m<CR>
-map <expr> <Leader>c Send_text_to_buffer()
+nmap <expr> <Leader>r Send_text_to_buffer()
 
-fu Send_text_to_buffer() abort
-	return ':w<CR>:!tmux send-keys -t .+1 "' . expand('%:p') . '"<CR>'
+fu Send_text_to_buffer()
+	let substitute_command = "source " . expand('%:p')
+	return ":w\<CR>:!tmux send-keys -t .+1 \"" . substitute_command . "\" C-m\<CR>\<CR>"
 endfu
 
 color slate
