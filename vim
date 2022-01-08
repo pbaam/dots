@@ -1,7 +1,7 @@
 nmap <expr> <Leader>r Send_text_to_buffer()
 
 fu Send_text_to_buffer()
-	let substitute_command = "source " . expand('%:p')
+	let substitute_command = expand('%:p')
 	return ":w\<CR>:!tmux send-keys -t .+1 \"" . substitute_command . "\" C-m\<CR>\<CR>"
 endfu
 
@@ -22,8 +22,6 @@ set ruler
 set hlsearch
 set shortmess-=S
 set ignorecase
-set autoindent
-set paste
 set autoindent
 set backspace=indent,eol,start
 
