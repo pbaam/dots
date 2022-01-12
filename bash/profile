@@ -5,7 +5,7 @@ PATH="$HOME/bin:$PATH"
 source $HOME/.bashrc
 
 mkdir_cd() {
-	mkdir $1
+	mkdir -p $1
 	cd $1
 }
 
