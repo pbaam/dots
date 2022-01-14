@@ -1,0 +1,4 @@
+_tmux() {
+}
+
+complete -o filenames -o bashdefault -F _tmux tmux
