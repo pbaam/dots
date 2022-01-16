@@ -19,5 +19,6 @@ eval "$(pandoc --bash-completion)"
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias mkcd='mkdir_cd'
+alias tmux-new='tmux new-window -c "#{pane_current_path}"'
 
 PS1="[ \[\e[31;1m\]\h\[\e[0m\] \[\e[36;3m\]\W\[\e[0m\] ] "
