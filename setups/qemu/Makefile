@@ -9,10 +9,10 @@ clean: $(UNTRACK-PREFIX)$(FILES)
 	rm $<
 
 run:
-	qemu-system-x86_64 -m $(DISK-SPACE) -cdrom $(ISO) -drive file=$(DISK),format=raw -bios $(BIOS)
+	qemu-system-x86_64 -m $(RAM-SIZE) -cdrom $(ISO) -drive file=$(DISK),format=raw -bios $(BIOS)
 
 $(DISK):
-	qemu-img create -f raw $@ $(DISK-SPACE)
+	qemu-img create -f raw $@ $(DISK-SIZE)
 $(ISO):
 	# https://www.gentoo.org/downloads/
 	wget $(ISO-URL) -O $@
