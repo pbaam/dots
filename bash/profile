@@ -1,8 +1,9 @@
 #!/bin/sh
 
-PATH="$HOME/bin:$PATH"
-
 source $HOME/.bashrc
+
+export PATH="$HOME/bin:$PATH"
+export PS1="[ \[\e[31;1m\]\h\[\e[0m\] \[\e[36;3m\]\W\[\e[0m\] ] "
 
 mkdir_cd() {
 	mkdir -p $1
@@ -15,11 +16,10 @@ if [ -f "$HOME/.bash-git-prompt/gitprompt.sh" ]; then
 fi
 
 eval "$(pandoc --bash-completion)"
+eval "$(rclone completion bash)"
 
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias mkcd='mkdir_cd'
 alias tmux-new='tmux new-window -c "#{pane_current_path}"'
 alias glgoa='git log --graph --oneline --all'
-
-PS1="[ \[\e[31;1m\]\h\[\e[0m\] \[\e[36;3m\]\W\[\e[0m\] ] "
