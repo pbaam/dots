@@ -1,12 +1,20 @@
-all: run | u-disk u-bios u-iso
+include config.mk
+
+FILES = $(DISK) $(BIOS) $(ISO)
+
+all: | $(FILES)
+all: run
+
+clean: $(UNTRACK-PREFIX)$(FILES)
+	rm $<
 
 run:
-	qemu-system-x86_64 -m 1G -cdrom u-iso -drive file=u-disk,format=raw -bios u-bios
+	qemu-system-x86_64 -m $(DISK-SPACE) -cdrom $(ISO) -drive file=$(DISK),format=raw -bios $(BIOS)
 
-u-disk:
-	qemu-img create -f raw u-disk 5G
-u-iso:
+$(DISK):
+	qemu-img create -f raw $@ $(DISK-SPACE)
+$(ISO):
 	# https://www.gentoo.org/downloads/
-	wget "https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/20220102T170545Z/install-amd64-minimal-20220102T170545Z.iso"
-u-bios:
-	wget https://github.com/clearlinux/common/raw/master/OVMF.fd
+	wget $(ISO-URL) -O $@
+$(BIOS):
+	wget $(BIOS-URL) -O $@
