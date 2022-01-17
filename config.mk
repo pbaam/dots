@@ -1,5 +1,16 @@
 SRCDIR = src
 BINDIR = bin
+LINKSDIR = links-dir
+LINKS = links
+SCRIPTS = scripts
+
+UNTRACK-PREFIX = u-
+$(BUILD-SCRIPTS) = $(UNTRACK-PREFIX)$(SCRIPTS)
+
 SRC = $(HOME)/$(SRCDIR)
 BIN = $(HOME)/$(BINDIR)
 
+MKLINK-SCRIPT = make-links
+LINK-SCRIPT = link-files
+MKLINK = $(SCRIPTS)/$(MKLINK-SCRIPT)
+LINK = $(SCRIPTS)/$(LINK-SCRIPT)
