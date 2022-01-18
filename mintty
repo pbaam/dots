@@ -1,0 +1,11 @@
+ThemeFile=gruvbox
+Transparency=low
+CursorType=block
+BoldAsColour=no
+AllowBlinking=yes
+Locale=C
+Charset=UTF-8
+ClipShortcuts=no
+CtrlShiftShortcuts=yes
+Font=Source Code Pro
+FontHeight=14
